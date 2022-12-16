@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FluptuHome</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body>
+    <nav id="navBar" class="sidebar justify-content-center">
+      <div data-controller="hello">
+        <button class="openbtn" data-action="click->hello#greet">☰</button>
+      </div>
+      <a id="homePage" href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+    </nav>
+    
+    <header>
+
+    </header>
+    
+    <div id="main">
+      
+        <div class="container">
+        
+          <%= yield %>
+        </div>
+    </div>
+    
+    
+  </body>
+</html>
