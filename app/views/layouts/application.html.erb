@@ -11,28 +11,31 @@
   </head>
 
   <body>
-    <nav id="navBar" class="sidebar justify-content-center">
-      <div data-controller="hello">
-        <button class="openbtn" data-action="click->hello#greet">☰</button>
-      </div>
-      <a id="homePage" href="#">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-    </nav>
-    
-    <header>
-
-    </header>
-    
-    <div id="main">
+    <main class="d-flex flex-nowrap">
       
-        <div class="container">
+      <div data-controller="hello" class="m-4 position-absolute">
+        <button class="openbtn" data-action="click->hello#sideMenuToggle">☰</button>
+      </div>
+
+      <div id="navBar" class="sidebar d-flex flex-column flex-shrink-0"> 
+         
+        <%= link_to root_path, class: "btn btn-default" do %>
+          <i class="bi bi-house-fill"></i><span class="p-1" id="homePage"></span> 
+        <% end %>
+        <%= link_to homeOS_path, class: "btn btn-default" do %>
+          <i class="bi bi-house-gear-fill"></i><span class="p-1" id="homeOSPage"></span> 
+        <% end %>
+      </div>   
         
-          <%= yield %>
-        </div>
-    </div>
+      <div class="container">
+        <header class="">
+          <h1>123</h1>
+        </header>
+        <%= yield %>
+          
+      </div>
+      
     
-    
+    </main>
   </body>
 </html>

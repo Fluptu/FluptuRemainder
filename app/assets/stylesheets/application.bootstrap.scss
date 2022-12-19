@@ -4,28 +4,36 @@
 
 $mainColor: #39025e;
 
-
 body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     font-family: "Lato", sans-serif;
     background-color: $mainColor;
+}
+  
+html {
+    height: -webkit-fill-available;
+}
+  
+main {
+    height: 100vh;
+    height: -webkit-fill-available;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 header{
     height: 15vh;
+    border: 1px solid black;
 }
   
 .sidebar {
-    height: 100%;
+    padding-top: 10vh;
+    height: 100vh;
     width: 10vh;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
+    background-color: #111;   
     transition: 0.5s;
-    padding-top: 20px;
-    margin: 0 auto;
     text-align: center;
 }
 
@@ -42,8 +50,6 @@ header{
 }
 
 .openbtn {
-    transition: 0.5s;
-    margin-bottom: 2vh;
     font-size: 20px;
     cursor: pointer;
     background-color: #111;
@@ -55,9 +61,11 @@ header{
     background-color: #444;
 }
 
-#main {
-    transition: margin-left .5s;
+
+.home{
+    border: 1px solid black;
 }
+
 
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}

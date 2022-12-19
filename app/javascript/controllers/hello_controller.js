@@ -1,20 +1,20 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  greet() {
-    if(document.getElementById("navBar").style.width == "20vh"){
-      this.element.style.marginLeft="0vh";
+  sideMenuToggle() {
+    if(document.getElementById("navBar").style.width == "20vh")
+    {
       document.getElementById("navBar").style.width = "10vh";
-      document.getElementById("main").style.marginLeft = "10vh";  
-      document.getElementById("homePage").textContent = "1";
-    }else{
-      this.element.style.marginLeft="10vh";
-      document.getElementById("navBar").style.width = "20vh";
-      document.getElementById("main").style.marginLeft = "20vh";  
-      document.getElementById("homePage").textContent = "Pełna nazwa";  
+      document.getElementById("homePage").textContent = "";
+      document.getElementById("homeOSPage").textContent = "";
     }
-      //document.getElementById("mySidebar").style.width = "10vh";
-      //document.getElementById("main").style.marginLeft= "10vh";
-    
+    else
+    {
+      document.getElementById("navBar").style.width = "20vh";
+      document.getElementById("homePage").style.fontSize = "16px";
+      document.getElementById("homePage").textContent = "Home Page";  
+      document.getElementById("homeOSPage").style.fontSize = "16px";
+      document.getElementById("homeOSPage").textContent = "Home OS";  
+    }
   }
 }

@@ -9,8 +9,12 @@ Bundler.require(*Rails.groups)
 module FluptuHome
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    I18n.available_locales = %i[en pl]
+
     config.load_defaults 7.0
     config.assets.precompile += ["main.bootstrap.scss"]
+    config.i18n.default_locale = :en
+    
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
