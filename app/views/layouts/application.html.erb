@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
+    />
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
@@ -13,23 +16,31 @@
   <body>
     <main class="d-flex flex-nowrap">
       
-      <div data-controller="hello" class="m-4 position-absolute">
-        <button class="openbtn" data-action="click->hello#sideMenuToggle">☰</button>
-      </div>
+      
 
-      <div id="navBar" class="sidebar d-flex flex-column flex-shrink-0"> 
-         
-        <%= link_to root_path, class: "btn btn-default" do %>
-          <i class="bi bi-house-fill"></i><span class="p-1" id="homePage"></span> 
+      <div id="navBar" class="sidebar d-flex flex-column flex-shrink-0 pt-2"> 
+        <div data-controller="side-menu">
+          <button class="openbtn" data-action="click->side-menu#sideMenuToggle">☰</button>
+        </div>
+  
+        <%= link_to root_path, class: "btn btn-default pt-3" do %>
+          <i class="bi bi-house-fill"></i><span id="homePageText"><%= t(:homePageText) %></span> 
         <% end %>
+
         <%= link_to homeOS_path, class: "btn btn-default" do %>
-          <i class="bi bi-house-gear-fill"></i><span class="p-1" id="homeOSPage"></span> 
+          <i class="bi bi-house-gear-fill"></i><span id="homeOSPageText"><%= t(:homeOSPageText) %></span> 
         <% end %>
+  
       </div>   
         
       <div class="container">
-        <header class="">
-          <h1>123</h1>
+        <header class="d-flex">
+          <div class="flex-grow-1">
+            <h1>123</h1>
+          </div>
+          <div>
+            <%= render 'shared/change_locale' %>
+          </div>
         </header>
         <%= yield %>
           

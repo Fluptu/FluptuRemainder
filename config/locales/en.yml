@@ -32,3 +32,5 @@
 en:
   hello: "Hello world"
   home: "Home Page"
+  homePageText: "Home Page"
+  homeOSPageText: "Home OS"
