@@ -7,32 +7,13 @@
     <%= csp_meta_tag %>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
-    />
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-
   <body>
     <main class="d-flex flex-nowrap">
-      
-      
-
-      <div id="navBar" class="sidebar d-flex flex-column flex-shrink-0 pt-2"> 
-        <div data-controller="side-menu">
-          <button class="openbtn" data-action="click->side-menu#sideMenuToggle">☰</button>
-        </div>
-  
-        <%= link_to root_path, class: "btn btn-default pt-3" do %>
-          <i class="bi bi-house-fill"></i><span id="homePageText"><%= t(:homePageText) %></span> 
-        <% end %>
-
-        <%= link_to homeOS_path, class: "btn btn-default" do %>
-          <i class="bi bi-house-gear-fill"></i><span id="homeOSPageText"><%= t(:homeOSPageText) %></span> 
-        <% end %>
-  
-      </div>   
-        
+      <%= render 'layouts/sidebar' %>
       <div class="container">
         <header class="d-flex">
           <div class="flex-grow-1">
@@ -43,10 +24,7 @@
           </div>
         </header>
         <%= yield %>
-          
       </div>
-      
-    
     </main>
   </body>
 </html>

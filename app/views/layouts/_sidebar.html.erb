@@ -1,0 +1,13 @@
+<div id="navBar" class="sidebar d-flex flex-column flex-shrink-0 pt-2"> 
+    <div data-controller="side-menu">
+        <button class="openbtn" data-action="click->side-menu#sideMenuToggle">☰</button>
+    </div>
+
+    <%= link_to root_path, class: "btn btn-default pt-3" do %>
+        <i class="bi bi-house-fill"></i><span id="homePageText"><%= t(:homePageText) %></span> 
+    <% end %>
+
+    <%= link_to homeOS_path, class: "btn btn-default" do %>
+        <i class="bi bi-house-gear-fill"></i><span id="homeOSPageText"><%= t(:homeOSPageText) %></span> 
+    <% end %>
+</div>
