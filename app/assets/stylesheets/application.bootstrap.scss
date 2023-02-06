@@ -41,7 +41,6 @@ header{
     font-size: 25px;
     color: #818181;
     display: block;
-    transition: 0.3s;
 }
 
 .sidebar a:hover {
@@ -66,8 +65,34 @@ header{
     border: 1px solid black;
 }
 
+.media-btn{
+    display: none;
+}
 
-@media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
+@media screen and (max-width:632px) {
+    .media-btn{
+        display: block;
+        position: absolute;
+        z-index: 1;
+    }
+    .openbtn{
+        display: none;
+    }
+    .openbtn-media{
+        font-size: 20px;
+        cursor: pointer;
+        color: white;
+        background-color: transparent;
+        border: none;
+    }
+    .sidebar {
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+    }
     .sidebar a {font-size: 18px;}
 }
