@@ -1,42 +1,58 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
+
   sideMenuToggle() {
-    if(document.getElementById("navBar").style.width === "20vh")
+    const nav = document.getElementById("navBar");
+    const homePageText = document.getElementById("homePageText");
+    const homeOSPageText = document.getElementById("homeOSPageText");
+    const tasksPageText = document.getElementById("tasksPageText");
+    if(nav.style.width === "20vh")
     {
-      document.getElementById("navBar").style.width = "7vh";
-      document.getElementById("homePageText").style.display = 'none';
-      document.getElementById("homeOSPageText").style.display = 'none';
+      homePageText.style.display = 'none';
+      homeOSPageText.style.display = 'none';
+      tasksPageText.style.display = 'none';
+      nav.style.width = "7vh";
     }
     else
     {
-      document.getElementById("navBar").style.width = "20vh";
+      nav.style.width = "20vh";
       setTimeout(function (){
-        document.getElementById("homePageText").style.fontSize = "16px";
-        document.getElementById("homePageText").style.padding = "0px 0px 0px 5px";
-        document.getElementById("homePageText").style.display = 'inline';
-        document.getElementById("homeOSPageText").style.fontSize = "16px";
-        document.getElementById("homeOSPageText").style.padding = "0px 0px 0px 5px";
-        document.getElementById("homeOSPageText").style.display = 'inline';
+        homePageText.style.fontSize = "16px";
+        homePageText.style.padding = "0px 0px 0px 5px";
+        homePageText.style.display = 'inline';
+        homeOSPageText.style.fontSize = "16px";
+        homeOSPageText.style.padding = "0px 0px 0px 5px";
+        homeOSPageText.style.display = 'inline';
+        tasksPageText.style.fontSize = "16px";
+        tasksPageText.style.padding = "0px 0px 0px 5px";
+        tasksPageText.style.display = 'inline';
       },200)
     }
   }
 
   sideMenuToggleMedia(){
-    if(document.getElementById("navBar").style.width === "40vh")
+    const nav = document.getElementById("navBar");
+    const homePageText = document.getElementById("homePageText");
+    const homeOSPageText = document.getElementById("homeOSPageText");
+    const tasksPageText = document.getElementById("tasksPageText");
+    if(nav.style.width === "40vh")
     {
-      document.getElementById("navBar").style.width = '0';
+      nav.style.width = '0';
     }
     else
     {
-      document.getElementById("navBar").style.width = "40vh";
+      nav.style.width = "40vh";
       setTimeout(function (){
-        document.getElementById("homePageText").style.fontSize = "16px";
-        document.getElementById("homePageText").style.padding = "0px 0px 0px 5px";
-        document.getElementById("homePageText").style.display = 'inline';
-        document.getElementById("homeOSPageText").style.fontSize = "16px";
-        document.getElementById("homeOSPageText").style.padding = "0px 0px 0px 5px";
-        document.getElementById("homeOSPageText").style.display = 'inline';
+        homePageText.style.fontSize = "16px";
+        homePageText.style.padding = "0px 0px 0px 5px";
+        homePageText.style.display = 'inline';
+        homeOSPageText.style.fontSize = "16px";
+        homeOSPageText.style.padding = "0px 0px 0px 5px";
+        homeOSPageText.style.display = 'inline';
+        tasksPageText.style.fontSize = "16px";
+        tasksPageText.style.padding = "0px 0px 0px 5px";
+        tasksPageText.style.display = 'inline';
       },200)
     }
   }

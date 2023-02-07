@@ -30,7 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   home: "Home Page"
   homePageText: "Home Page"
   homeOSPageText: "Home OS"
+  tasksPageText: "Tasks"
+  task_create_success: "Task was successfully created"
+  task_update_success: "Task was successfully updated"
+  task_delete_success: "Task was successfully deleted"

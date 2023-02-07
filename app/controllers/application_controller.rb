@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+    add_flash_types :info, :success , :error
     around_action :switch_locale
 
     def switch_locale(&action)

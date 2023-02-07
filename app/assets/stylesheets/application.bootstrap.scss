@@ -27,6 +27,12 @@ header{
     height: 15vh;
     border: 1px solid black;
 }
+
+.flash{
+    position: absolute;
+    margin-top: 5vh;
+    left: 50%;
+}
   
 .sidebar {
     height: 100vh;
@@ -47,6 +53,10 @@ header{
     color: #f1f1f1;
 }
 
+#homePageText,#homeOSPageText,#tasksPageText{
+    display: none;
+}
+
 .openbtn {
     font-size: 20px;
     cursor: pointer;
@@ -56,13 +66,7 @@ header{
 }
 
 .openbtn:hover {
-    //background-color: #444;
     text-shadow: 0 0 3px white;
-}
-
-
-.home{
-    border: 1px solid black;
 }
 
 .media-btn{
@@ -94,5 +98,8 @@ header{
         background-color: #111;
         overflow-x: hidden;
     }
-    .sidebar a {font-size: 18px;}
+    .sidebar a {
+        font-size: 18px;
+        transition: 0.5s;
+    }
 }

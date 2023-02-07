@@ -2,3 +2,7 @@ pl:
   home: "Strona Główna"
   homePageText: "Strona główna"
   homeOSPageText: "Home OS"
+  tasksPageText: "Zadania"
+  task_create_success: "Dodano nowe zadanie"
+  task_update_success: "Zaaktualizowano zadanie"
+  task_delete_success: "Zadanie pomyślnie usunięte"
