@@ -3,7 +3,6 @@
 
 
 .container{
-    border: 1px solid black;
     color:#aaa;
 }
 
@@ -11,3 +10,16 @@
     border: 1px solid black;
 }
 
+.tasks-view{
+    background-color: #1d0c34;
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}

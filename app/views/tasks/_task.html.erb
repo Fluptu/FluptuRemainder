@@ -1,21 +1,19 @@
 <div id="<%= dom_id task %>">
     <p class="card-title">
-      <strong>Title:</strong>
-      <%= task.title %>
+      <strong><%= task.title %></strong>
     </p>
 
     <p class="card-text">
-      <strong>Body:</strong>
       <%= task.body %>
     </p>
 
     <p class="card-text">
-      <strong>Scheduled:</strong>
+      <strong> <%= t(:'.is_task_scheduled') %> </strong>
       <%= task.scheduled %>
     </p>
 
     <p class="card-text">
-      <strong>Completed:</strong>
+      <strong> <%= t(:'.is_task_completed') %> </strong>
       <%= task.completed %>
     </p>
 </div>

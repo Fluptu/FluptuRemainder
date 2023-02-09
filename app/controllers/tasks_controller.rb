@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
+  #before_action :ensure_frame_response, only: %i[ new edit]
+
 
   # GET /tasks or /tasks.json
   def index
@@ -25,7 +27,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to task_url(@task) }
+        format.html { redirect_to tasks_url }
         format.json { render :show, status: :created, location: @task }
         flash[:notice] = t(:task_create_success)
       else
@@ -39,7 +41,7 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
-        format.html { redirect_to task_url(@task)}
+        format.html { redirect_to tasks_url}
         format.json { render :show, status: :ok, location: @task }
         flash[:notice] = t(:task_update_success)
       else
@@ -70,4 +72,10 @@ class TasksController < ApplicationController
     def task_params
       params.require(:task).permit(:title, :body, :scheduled, :completed)
     end
+
+    # Prevent from editing or creating new task in another page, accept only modal
+  #def ensure_frame_response
+  #    return unless Rails.env.development?
+  #    redirect_to tasks_path unless turbo_frame_request?
+  #  end
 end

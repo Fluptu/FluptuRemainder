@@ -6,3 +6,11 @@ pl:
   task_create_success: "Dodano nowe zadanie"
   task_update_success: "Zaaktualizowano zadanie"
   task_delete_success: "Zadanie pomyślnie usunięte"
+  tasks:
+    index:
+      task_header_text: "Zadania"
+      task_header_new_task_text: "Nowe zadanie"
+      show_task_button_text: "Pokaż szczegóły"
+    task:
+      is_task_scheduled: "Do wykonania:"
+      is_task_completed: "Wykonano:"

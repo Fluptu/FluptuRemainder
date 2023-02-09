@@ -1,8 +1,18 @@
-<%= render @task %>
+<%= turbo_frame_tag "modal" do %>
+  <div data-controller="modal">
+    <div class="modal-body">
+      <%= render @task %>
 
-<div>
-  <%= link_to "Edit this task", edit_task_path(@task) %> |
-  <%= link_to "Back to tasks", tasks_path %>
+      <div>
+        <%= link_to "Edit this task", edit_task_path(@task) %> |
+        <%= link_to "Back to tasks", tasks_path %>
 
-  <%= button_to "Destroy this task", @task, method: :delete %>
-</div>
+        <%= button_to "Destroy this task", @task, method: :delete %>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+    </div>
+  </div>
+<% end %>

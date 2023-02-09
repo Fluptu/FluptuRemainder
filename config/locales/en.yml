@@ -37,3 +37,12 @@ en:
   task_create_success: "Task was successfully created"
   task_update_success: "Task was successfully updated"
   task_delete_success: "Task was successfully deleted"
+  tasks:
+    index:
+      task_header_text: "Tasks"
+      task_header_new_task_text: "New task"
+      show_task_button_text: "Show more"
+    task:
+      is_task_scheduled: "Scheduled:"
+      is_task_completed: "Completed:"
+
