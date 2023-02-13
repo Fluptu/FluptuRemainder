@@ -9,11 +9,19 @@
 
     <p class="card-text">
       <strong> <%= t(:'.is_task_scheduled') %> </strong>
-      <%= task.scheduled %>
+      <% if task.scheduled %>
+        <%= t(:true) %>
+      <% else %>
+        <%= t(:false) %>
+      <% end %>
     </p>
 
     <p class="card-text">
       <strong> <%= t(:'.is_task_completed') %> </strong>
-      <%= task.completed %>
+      <% if task.completed %>
+        <%= t(:true) %>
+      <% else %>
+        <%= t(:false) %>
+      <% end %>
     </p>
 </div>

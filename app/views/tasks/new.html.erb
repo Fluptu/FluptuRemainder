@@ -1,16 +1,14 @@
 <%= turbo_frame_tag "modal" do %>
   <div data-controller="modal">
-      <h1 class="modal-header">
-        New task
+      <h1 class="modal-header ">
+        <%= t '.new_task_header' %>
       </h1>
       <div class="modal-body">
         <%= render "form", task: @task %>
       </div>
 
-      <br>
-
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
-    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+      </div>
   </div>
 <% end %>

@@ -12,6 +12,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body>
+
     <div class="modal"
          tabindex="-1"
          data-controller="modal"
@@ -24,22 +25,29 @@
       </div>
     </div>
 
+    <%= render 'layouts/sidebar' %>
+
+    <div class="flash">
+      <%= render 'shared/flash' %>
+    </div>
+
     <main class="d-flex flex-nowrap">
-      <%= render 'layouts/sidebar' %>
       <div class="container">
+
         <div class="media-btn" data-controller="side-menu">
           <button class="openbtn-media" data-action="click->side-menu#sideMenuToggleMedia">☰</button>
         </div>
-        <div class="flash">
-          <%= render 'shared/flash' %>
-        </div>
+
         <header class="d-flex rounded-4 mb-2">
+
           <div class="flex-grow-1"></div>
           <div>
             <%= render 'shared/change_locale' %>
           </div>
         </header>
+
         <%= yield %>
+
       </div>
     </main>
   </body>

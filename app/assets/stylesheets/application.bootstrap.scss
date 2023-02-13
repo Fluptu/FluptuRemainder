@@ -28,7 +28,7 @@ body {
   
 html {
     height: -webkit-fill-available;
-    overflow: hidden;
+    //overflow: hidden;
 }
   
 main {
@@ -41,11 +41,31 @@ header{
     background-color: #1d0c34;
 }
 
-.flash{
-    position: absolute;
-    margin-top: 5vh;
+.flash {
+    position:fixed;
+    top: 5rem;
     left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-s);
+
+    max-width: 100%;
+    width: max-content;
+    padding: 0 var(--space-m);
+
+    &__message {
+        font-size: var(--font-size-s);
+        color: var(--color-white);
+        padding: var(--space-xs) var(--space-m);
+        background-color: var(--color-dark);
+        animation: appear-then-fade 4s both;
+        border-radius: 999px;
+    }
 }
+
   
 .sidebar {
     position: fixed;
@@ -89,20 +109,48 @@ header{
 
 
 
-@media screen and (max-width: 20em) {
+.modal-header {
+    color: #fff;
+    background-color: #111;
+    border-color: #111;
+}
+
+.modal-body{
+    color: #fff;
+    background-color: #1d1d1d;
+    border-color: #111;
+}
+
+.modal-footer{
+    color: #fff;
+    background-color: #111;
+    border-color: #111;
+}
+
+.modal-content{
+    background-color: #111;
+    border:2px solid black;
+}
+
+.modal{
+    //border: 2px solid black;
+}
+
+
+@media screen and (max-width: 40em) {
     .media-btn{
         display: block;
-        position: absolute;
+        position: fixed;
         z-index: 1;
     }
     .openbtn{
         display: none;
     }
     .openbtn-media{
-        font-size: 20px;
+        font-size: 2rem;
         cursor: pointer;
         color: white;
-        background-color: transparent;
+        background-color: #111;
         border: none;
     }
     .sidebar {

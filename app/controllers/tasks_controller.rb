@@ -74,8 +74,8 @@ class TasksController < ApplicationController
     end
 
     # Prevent from editing or creating new task in another page, accept only modal
-  #def ensure_frame_response
-  #    return unless Rails.env.development?
-  #    redirect_to tasks_path unless turbo_frame_request?
-  #  end
+    def ensure_frame_response
+        return unless Rails.env.development?
+        redirect_to tasks_path unless turbo_frame_request?
+    end
 end

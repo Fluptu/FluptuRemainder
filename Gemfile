@@ -33,6 +33,9 @@ gem "jbuilder"
 # Home Assistant API
 gem "hass-client"
 
+# forms helper
+gem 'simple_form'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

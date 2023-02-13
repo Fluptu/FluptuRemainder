@@ -1,10 +1,18 @@
-<h1>Editing task</h1>
+<%= turbo_frame_tag "modal" do %>
+  <div data-controller="modal">
+    <h1 class="modal-header">
+      <%= t '.edit_task_header' %>
+    </h1>
 
-<%= render "form", task: @task %>
+    <div class="modal-body">
+      <%= render "form", task: @task %>
+    </div>
 
-<br>
+    <br>
 
-<div>
-  <%= link_to "Show this task", @task %> |
-  <%= link_to "Back to tasks", tasks_path %>
-</div>
+    <div class="modal-footer justify-content-between">
+      <%= button_to t('.delete_task_button'), @task, method: :delete,form: { data: { turbo_confirm: t(:task_delete_confirm) } }, class: 'btn btn-danger'%>
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+    </div>
+  </div>
+<% end %>

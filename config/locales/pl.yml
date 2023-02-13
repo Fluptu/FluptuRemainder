@@ -1,4 +1,6 @@
 pl:
+  "true": "Tak"
+  "false": "Nie"
   home: "Strona Główna"
   homePageText: "Strona główna"
   homeOSPageText: "Home OS"
@@ -6,7 +8,13 @@ pl:
   task_create_success: "Dodano nowe zadanie"
   task_update_success: "Zaaktualizowano zadanie"
   task_delete_success: "Zadanie pomyślnie usunięte"
+  task_delete_confirm: "Na pewno usunąć zadanie?"
   tasks:
+    new:
+      new_task_header: "Nowe zadanie"
+    edit:
+      edit_task_header: "Edycja zadania"
+      delete_task_button: "Usuń zadanie"
     index:
       task_header_text: "Zadania"
       task_header_new_task_text: "Nowe zadanie"
@@ -14,3 +22,26 @@ pl:
     task:
       is_task_scheduled: "Do wykonania:"
       is_task_completed: "Wykonano:"
+  activerecord:
+    models:
+      task:
+        one: "Zadanie"
+        other: "Zadania"
+    attributes:
+      task:
+        title: "Tytuł"
+        body: "Treść"
+        completed: "Ukończono"
+        scheduled: "Do wykonania"
+    errors:
+      models:
+        task:
+          attributes:
+            title:
+              blank: " nie może być pusty"
+  helpers:
+    submit:
+      task:
+        create: "Stwórz %{model}"
+        update: "Zaaktualizuj %{model}"
+
