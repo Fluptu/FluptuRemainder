@@ -1,6 +1,8 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+$mainColor: #39025e;
+$backColor: #1d0c34;
 
 .container{
     color:#aaa;
@@ -10,8 +12,12 @@
     border: 1px solid black;
 }
 
+.basic-view{
+    background-color: $backColor;
+}
+
 .tasks-view{
-    background-color: #1d0c34;
+    background-color: $backColor;
 }
 
 @-webkit-keyframes animatetop {

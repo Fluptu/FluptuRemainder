@@ -2,7 +2,7 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import 'main.bootstrap.scss';
 
-$mainColor: #39025e;
+
 
 * { box-sizing: border-box; }
 
@@ -38,7 +38,7 @@ main {
 
 header{
     height: 15vh;
-    background-color: #1d0c34;
+    background-color: $backColor;
 }
 
 .flash {
@@ -127,7 +127,10 @@ header{
     border:2px solid black;
 }
 
-
+.login-links{
+    text-decoration: none;
+    color: #fff;
+}
 
 @media screen and (max-width: 40em) {
     .media-btn{

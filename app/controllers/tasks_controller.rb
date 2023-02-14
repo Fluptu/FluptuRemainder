@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
   #before_action :ensure_frame_response, only: %i[ new edit]
 
 
@@ -24,6 +25,7 @@ class TasksController < ApplicationController
   # POST /tasks or /tasks.json
   def create
     @task = Task.new(task_params)
+    @task.user = current_user
 
     respond_to do |format|
       if @task.save

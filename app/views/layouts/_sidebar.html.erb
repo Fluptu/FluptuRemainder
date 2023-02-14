@@ -1,4 +1,4 @@
-<div id="navBar" class="sidebar d-flex flex-column flex-shrink-0 pt-2"  data-controller="side-menu" >
+<div id="navBar" class="sidebar d-flex flex-column flex-shrink-0 pt-2 "  data-controller="side-menu" >
     <div>
         <button class="openbtn" data-action="side-menu#sideMenuToggle">☰</button>
     </div>
@@ -11,10 +11,9 @@
         <i class="bi bi-house-gear-fill"></i><span id="homeOSPageText"><%= t(:homeOSPageText) %></span> 
     <% end %>
 
-    <% if current_user %>
-        <%= link_to tasks_path, class: "btn btn-default" do %>
-            <i class="bi bi-calendar-check"></i><span id="tasksPageText"><%= t(:tasksPageText) %></span>
-        <% end %>
+    <%= link_to tasks_path, class: "btn btn-default #{current_user ? '' : 'd-none' } " do %>
+        <i class="bi bi-calendar-check"></i><span id="tasksPageText"><%= t(:tasksPageText) %></span>
     <% end %>
+
 
 </div>

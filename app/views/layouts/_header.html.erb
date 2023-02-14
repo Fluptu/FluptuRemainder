@@ -5,16 +5,23 @@
 <div class="flex-grow-1"></div>
 
 <div class="flex flex-column float-end">
+  <% if user_signed_in? %>
+    <h1>asd</h1>
+    <% end %>
   <div class="flex-row-reverse">
     <%= render 'shared/change_locale' %>
   </div>
   <div class="d-flex px-2" >
     <% if current_user %>
-      <%= current_user.email %>
-      <%= button_to t(:sign_out), destroy_user_session_path, method: :delete %>
+      <div class="d-block text-end">
+        <%= link_to current_user.email, edit_user_registration_path, class: 'login-links' %>
+        <%= button_to t(:sign_out), destroy_user_session_path, method: :delete, class: 'login-links bg-transparent border-0' %>
+      </div>
     <% else %>
-      <%= link_to t(:sign_up), new_user_registration_path %>
-      <%= link_to t(:login), new_user_session_path %>
+      <div class="p-1">
+        <%= link_to t(:sign_up), new_user_registration_path, class: "login-links" %> |
+        <%= link_to t(:login), new_user_session_path, class: 'login-links' %>
+      </div>
     <% end %>
 
   </div>
