@@ -34,16 +34,8 @@
     <main class="d-flex flex-nowrap">
       <div class="container">
 
-        <div class="media-btn" data-controller="side-menu">
-          <button class="openbtn-media" data-action="click->side-menu#sideMenuToggleMedia">☰</button>
-        </div>
-
         <header class="d-flex rounded-4 mb-2">
-
-          <div class="flex-grow-1"></div>
-          <div>
-            <%= render 'shared/change_locale' %>
-          </div>
+          <%= render 'layouts/header' %>
         </header>
 
         <%= yield %>

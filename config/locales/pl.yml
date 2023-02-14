@@ -9,6 +9,9 @@ pl:
   task_update_success: "Zaaktualizowano zadanie"
   task_delete_success: "Zadanie pomyślnie usunięte"
   task_delete_confirm: "Na pewno usunąć zadanie?"
+  sign_up: "Zarejestruj się"
+  login: "Zaloguj"
+  sign_out: "Wyloguj się"
   tasks:
     new:
       new_task_header: "Nowe zadanie"

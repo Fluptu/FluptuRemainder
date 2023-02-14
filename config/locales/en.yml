@@ -40,6 +40,9 @@ en:
   task_update_success: "Task was successfully updated"
   task_delete_success: "Task was successfully deleted"
   task_delete_confirm: "Are you sure you want to delete this task?"
+  sign_up: "Sign up"
+  login: "Sign in"
+  sign_out: "Logout"
   tasks:
     new:
       new_task_header: "New Task"
