@@ -1,18 +1,5 @@
 # frozen_string_literal: true
 
-class TurboFailureApp < Devise::FailureApp
-  def respond
-    if request_format == :turbo_stream
-      :redirect
-    else
-      super
-    end
-  end
-
-  def skip_format?
-    %w[html turbo_stream].include? request_format.to_s
-  end
-end
 
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
@@ -29,12 +16,6 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '03d53373b83778805244b0b14987d1cc3a94940a9f1a08790beb048f0d216ad73c22c0d1b1c9a1b7b45836492a2bf7df21f784552d20e3b228cccec6a33756b0'
-
-  config.parent_controller = "TurboDeviseController"
-  config.navigational_formats = ['*/*', :html, :turbo_stream]
-  config.warden do |m|
-    m.failure_app = TurboFailureApp
-  end
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -66,7 +47,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-   config.authentication_keys = %i[ email username]
+   config.authentication_keys = [:username]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the

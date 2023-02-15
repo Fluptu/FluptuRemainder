@@ -2,12 +2,13 @@
   <button class="openbtn-media" data-action="click->side-menu#sideMenuToggleMedia">☰</button>
 </div>
 
+<div class="p-3">
+  <h1> Remainder </h1>
+</div>
+
 <div class="flex-grow-1"></div>
 
 <div class="flex flex-column float-end">
-  <% if user_signed_in? %>
-    <h1>asd</h1>
-    <% end %>
   <div class="flex-row-reverse">
     <%= render 'shared/change_locale' %>
   </div>
@@ -23,7 +24,6 @@
         <%= link_to t(:login), new_user_session_path, class: 'login-links' %>
       </div>
     <% end %>
-
   </div>
 </div>
 
