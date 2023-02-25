@@ -1,4 +1,4 @@
-# Simple remainder app
+# Simple reminder app
 [work in progress]
 
 Simple rails crud app that allows user to sign up and create tasks to do
