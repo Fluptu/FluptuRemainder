@@ -1,0 +1,25 @@
+.media-btn{"data-controller"=>"side-menu"}
+  %button.openbtn-media{"data-action"=>"click->side-menu#sideMenuToggleMedia"}☰
+
+
+.p-3
+  %h1
+    = t(:header_text)
+
+.flex-grow-1
+
+.flex.flex-column.float-end
+  .flex-row-reverse
+    = render 'shared/change_locale'
+
+  .d-flex.px-2
+    - if current_user
+      .d-block.text-end
+        = link_to current_user.email, edit_user_registration_path, class: 'login-links'
+        = button_to t(:sign_out), destroy_user_session_path, method: :delete, class: 'login-links bg-transparent border-0'
+
+    - else
+      .p-1
+        = link_to t(:sign_up), new_user_registration_path, class: "login-links"
+        = link_to t(:login), new_user_session_path, class: 'login-links'
+

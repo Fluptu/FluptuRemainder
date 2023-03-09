@@ -1,0 +1,19 @@
+#navBar.sidebar.d-flex.flex-column.flex-shrink-0.pt-2{"data-controller"=>"side-menu"}
+
+    %button.openbtn{"data-action"=>"side-menu#sideMenuToggle"}☰
+
+    = link_to root_path, class: "btn btn-default pt-3" do
+        %i.bi.bi-house-fill
+        %span#homePageText
+            = t(:homePageText)
+
+    / hidden for now
+    = link_to homeOS_path, class: "btn btn-default d-none" do
+        %i.bi.bi-house-gear-fill
+        %span#homeOSPageText
+            = t(:homeOSPageText)
+
+    = link_to tasks_path, class: "btn btn-default #{current_user ? '' : 'd-none' } " do
+        %i.bi.bi-calendar-check
+        %span#tasksPageText
+            = t(:tasksPageText)

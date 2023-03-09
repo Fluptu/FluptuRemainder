@@ -1,0 +1,19 @@
+%script{src: "https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js",
+  integrity: "sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D",
+  crossorigin: "anonymous",
+  async: true}
+
+.tasks-view.rounded-4.p-3.mb-3
+  .d-flex.flex-row.p-1.text-center.justify-content-between.mb-2
+    %h1= t(:'.task_header_text')
+    = button_to t(:'.task_header_new_task_text'), new_task_path, method: :get, data: { turbo_frame: 'modal' }, class: "btn btn-primary"
+
+
+  .row{"data-masonry"=>'{"percentPosition": true }', :style=>"height: 80vh"}
+    - @tasks.each do |task|
+      .col-sm-6.col-lg-4.mb-4
+        .card.text-bg-dark.mb-3
+          .card-body.d-flex.flex-column
+            = render task
+            %div
+              = button_to t(:'.show_task_button_text'), edit_task_path(task), method: :get, data: { turbo_frame: 'modal' }, class: "btn btn-secondary btn-sm mt-2"

@@ -1,0 +1,7 @@
+.basic-view.rounded-4.p-3.mb-3
+    %h1=t :home_welcome_text
+    %p
+        - if current_user
+            = t(:homePageWelcomeTextUserLoggedIn)
+        - else
+            = t(:homePageWelcomeTextGuest)

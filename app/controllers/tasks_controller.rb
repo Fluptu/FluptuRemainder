@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
-  #before_action :ensure_frame_response, only: %i[ new edit]
+  before_action :ensure_frame_response, only: %i[ new edit]
 
 
   # GET /tasks or /tasks.json

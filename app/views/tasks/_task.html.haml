@@ -1,0 +1,22 @@
+%div{:id=> "#{dom_id task}"}
+
+  %p.card-title
+    %strong
+      = task.title
+
+  %p.card-text
+    = task.body
+
+  %p.card-text
+    %strong= t(:'.is_task_scheduled')
+    - if task.scheduled
+      = t(:true)
+    - else
+      = t(:false)
+
+  %p.card-text
+    %strong= t(:'.is_task_completed')
+    - if task.completed
+      = t(:true)
+    - else
+      = t(:false)
