@@ -1,0 +1,7 @@
+%p= "#{t(:hello)} #{@resource.username}"
+
+%p= t(:account_locked)
+
+%p= t(:account_locked_unlock)
+
+%p= link_to t(:unlock_account), unlock_url(@resource, unlock_token: @token)

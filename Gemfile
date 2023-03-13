@@ -73,6 +73,6 @@ end
 
 gem "dockerfile-rails", ">= 1.2", :group => :development
 
-gem "pg", "~> 1.4"
+#gem "pg", "~> 1.4"
 
 gem "redis"

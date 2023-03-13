@@ -1,0 +1,19 @@
+.basic-view.rounded-4.p-3.mb-3
+  %h2= t(:login)
+
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-inputs
+      = f.input :username,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "name" }
+      = f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "current-password" }
+      = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+
+
+    .form-actions
+      = f.button :submit, t(:login),class: 'btn btn-secondary'
+
+  = render "devise/shared/links"
