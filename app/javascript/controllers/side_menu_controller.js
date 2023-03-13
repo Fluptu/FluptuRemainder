@@ -27,7 +27,7 @@ export default class extends Controller {
         tasksPageText.style.fontSize = "16px";
         tasksPageText.style.padding = "0px 0px 0px 5px";
         tasksPageText.style.display = 'inline';
-      },200)
+      },400)
     }
   }
 
@@ -53,7 +53,7 @@ export default class extends Controller {
         tasksPageText.style.fontSize = "16px";
         tasksPageText.style.padding = "0px 0px 0px 5px";
         tasksPageText.style.display = 'inline';
-      },200)
+      },400)
     }
   }
 }

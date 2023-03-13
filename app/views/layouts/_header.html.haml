@@ -1,7 +1,6 @@
 .media-btn{"data-controller"=>"side-menu"}
   %button.openbtn-media{"data-action"=>"click->side-menu#sideMenuToggleMedia"}☰
 
-
 .p-3
   %h1
     = t(:header_text)
@@ -22,4 +21,3 @@
       .p-1
         = link_to t(:sign_up), new_user_registration_path, class: "login-links"
         = link_to t(:login), new_user_session_path, class: 'login-links'
-
