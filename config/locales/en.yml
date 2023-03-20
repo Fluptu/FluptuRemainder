@@ -61,6 +61,7 @@ en:
     task:
       is_task_scheduled: "Scheduled:"
       is_task_completed: "Completed:"
+      scheduled_date_form: "Scheduled date"
   activerecord:
     models:
       task:
@@ -70,6 +71,7 @@ en:
       task:
         title: "Title"
         body: "Body"
+        scheduled_date: "Scheduled Date"
         completed: "Finished"
         scheduled: "Scheduled"
     errors:

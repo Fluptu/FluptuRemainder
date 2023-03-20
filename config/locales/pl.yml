@@ -1,6 +1,12 @@
 pl:
   "true": "Tak"
   "false": "Nie"
+  date:
+    month_names: [~, Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień]
+    order:
+      - year
+      - month
+      - day
   home: "Strona Główna"
   homePageText: "Strona główna"
   homeOSPageText: "Home OS"
@@ -29,6 +35,7 @@ pl:
     task:
       is_task_scheduled: "Do wykonania:"
       is_task_completed: "Wykonano:"
+      scheduled_date_form: "Data wykonania:"
   activerecord:
     models:
       task:
@@ -38,6 +45,7 @@ pl:
       task:
         title: "Tytuł"
         body: "Treść"
+        scheduled_date: "Data wykonania"
         completed: "Ukończono"
         scheduled: "Do wykonania"
       user:

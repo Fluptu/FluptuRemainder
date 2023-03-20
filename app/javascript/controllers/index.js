@@ -7,6 +7,9 @@ import { application } from "./application"
 import FlashController from "./flash_controller"
 application.register("flash", FlashController)
 
+import FormCheckBoxController from "./form_check_box_controller"
+application.register("form-check-box", FormCheckBoxController)
+
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
 

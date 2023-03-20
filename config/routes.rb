@@ -5,5 +5,8 @@ Rails.application.routes.draw do
     root 'pages#home'
     resources :tasks, :user
     get 'homeOS', to: 'pages#homeOS'
+    mount Facebook::Messenger::Server, at: 'bot'
   end
+
+
 end
