@@ -2,14 +2,19 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="form-check-box"
 export default class extends Controller {
+
   connect() {
-    document.getElementById('scheduled_date').visibility = true;
+    this.switch();
   }
 
   switch(){
-    const x = document.getElementById('scheduled_check_box').checked;
-    if (x == true){
-      document.getElementById('scheduled_date').disabled = false;
+    const checkBox = document.getElementById('scheduled_check_box');
+    const dateSelector = document.getElementById('scheduled_date');
+    if(checkBox.checked) {
+      dateSelector.style.display = 'block';
+    }else{
+      dateSelector.style.display = 'none';
     }
   }
+
 }
