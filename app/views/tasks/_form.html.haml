@@ -1,6 +1,8 @@
-= simple_form_for @task do |f|
-  = f.input :title
-  = f.input :body
-  = f.input :scheduled
-  = f.input :completed
-  = f.button :submit, class: 'btn btn-primary'
+%div{"data-controller"=>"form-check-box"}
+  = simple_form_for @task do |f|
+    = f.input :title
+    = f.input :body
+    = f.input :scheduled, input_html: {id: 'scheduled_check_box',"data-action":"change->form-check-box#switch"}
+    = f.input :scheduled_date,  wrapper_html: {id: 'scheduled_date', "data-checkbox-target":'input'}
+    = f.input :completed
+    = f.button :submit, class: 'btn btn-primary'
