@@ -11,6 +11,7 @@ module FluptuHome
     # Initialize configuration defaults for originally generated Rails version.
     I18n.available_locales = %i[en pl]
 
+
     config.load_defaults 7.0
     config.assets.precompile += ["main.bootstrap.scss"]
     config.i18n.default_locale = :en

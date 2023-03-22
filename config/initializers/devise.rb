@@ -274,6 +274,12 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
+  if Rails.env.development?
+    config.omniauth :facebook, ENV["APP_ID"], ENV["APP_SECRET"], callback_url: "http://localhost:3000/users/auth/facebook/callback"
+  end
+  if Rails.env.production?
+    config.omniauth :facebook, ENV["APP_ID"], ENV["APP_SECRET"], callback_url: "https://fluptureminder.fly.dev/users/auth/facebook/callback"
+  end
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

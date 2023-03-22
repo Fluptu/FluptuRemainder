@@ -1,29 +1,33 @@
 .basic-view.rounded-4.p-3.mb-3
   %h2= t(:sign_up)
 
-  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = f.error_notification
+  .row.d-flex.justify-content-center
+    .col-lg-2.offset-lg-0.align-self-center.text-center.py-2
+      = button_to t(:sign_up_facebook), user_facebook_omniauth_authorize_path, method: :post, data: {turbo: false}, class: 'btn btn-secondary'
 
-    .form-inputs
-      = f.input :username,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "name" }
-      = f.input :email,
-                  required: true,
-                  input_html: { autocomplete: "email" }
-      = f.input :password,
-                  required: true,
-                  hint: (t(:minimum_password_length, minimum_length: @minimum_password_length) if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" }
-      = f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" }
+    .col-lg-1.offset-lg-0.align-self-center.text-center
+      = t(:or)
+
+    .col-md-8.col-lg-6.col-xl-5.col-xxl-4.p-2
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = f.error_notification
+
+        .form-inputs
+          = f.input :username,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "name" }
+          = f.input :email,
+                      required: true,
+                      input_html: { autocomplete: "email" }
+          = f.input :password,
+                      required: true,
+                      hint: (t(:minimum_password_length, minimum_length: @minimum_password_length) if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" }
+          = f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" }
 
 
-    .form-actions
-      = f.button :submit, t(:sign_up), class: 'btn btn-secondary'
-
-
-
-  = render "devise/shared/links"
+        .form-actions
+          = f.button :submit, t(:sign_up), class: 'btn btn-secondary float-end'

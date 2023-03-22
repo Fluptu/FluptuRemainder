@@ -8,6 +8,7 @@ pl:
       - month
       - day
   home: "Strona Główna"
+  or: "lub"
   homePageText: "Strona główna"
   homeOSPageText: "Home OS"
   header_text: "Reminder"
@@ -20,6 +21,7 @@ pl:
   homePageWelcomeTextUserLoggedIn: "Przejdź do strony zadań aby dodać nowe zadania"
   homePageWelcomeTextGuest: "Zaloguj się aby dodać zadanie"
   sign_up: "Zarejestruj się"
+  sign_up_facebook: "Zaloguj się przy pomocy Facebooka"
   login: "Zaloguj"
   sign_out: "Wyloguj się"
   tasks:
