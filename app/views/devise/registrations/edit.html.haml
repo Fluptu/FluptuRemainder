@@ -27,7 +27,7 @@
                       input_html: { autocomplete: "current-password" }
 
         .form-actions
-          = f.button :submit, t(:update),class: 'btn btn-secondary float-end'
+          = f.button :submit, t(:update), data: { turbo: false }, class: 'btn btn-secondary float-end'
 
   %br
   %h3= t(:account_cancel)

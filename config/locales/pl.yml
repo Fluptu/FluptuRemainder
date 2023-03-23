@@ -58,6 +58,18 @@ pl:
         current_password: "Obecne hasło"
     errors:
       models:
+        user:
+          attributes:
+            email:
+              invalid: " jest niepoprawny"
+              blank: " nie może być puste"
+            password:
+              too_short: " jest za krótkie"
+              blank: " nie może być puste"
+            password_confirmation:
+              confirmation: "Hasła się nie zgadzają"
+            current_password:
+              blank: " nie może być puste"
         task:
           attributes:
             title:
