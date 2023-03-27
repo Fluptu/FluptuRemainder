@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[ show edit update destroy ]
+  before_action :set_task, only: %i[ show edit update destroy delete_confirm ]
   before_action :authenticate_user!
   before_action :ensure_frame_response, only: %i[ new edit]
 
@@ -37,6 +37,10 @@ class TasksController < ApplicationController
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def delete_confirm
+
   end
 
   # PATCH/PUT /tasks/1 or /tasks/1.json

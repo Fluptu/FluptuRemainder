@@ -1,0 +1,14 @@
+= turbo_frame_tag "modal" do
+  %div{"data-controller"=>"modal"}
+    %h1.modal-header
+      = t '.delete_task_header'
+
+    %div.modal-body
+      %p=t('.delete_task_message')
+
+    %br
+
+    .modal-footer.justify-content-between
+      = button_to t('.delete_task_button'), @task, method: :delete, class: 'btn btn-danger'
+      %button.btn.btn-secondary{:type=>"button", "data-bs-dismiss"=>"modal" } X
+

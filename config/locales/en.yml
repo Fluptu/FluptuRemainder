@@ -43,6 +43,8 @@ en:
   task_create_success: "Task was successfully created"
   task_update_success: "Task was successfully updated"
   task_delete_success: "Task was successfully deleted"
+  delete_task_header: "Uwaga"
+  delete_task_message: "Czy na pewno chcesz usunąć zadanie?"
   task_delete_confirm: "Are you sure you want to delete this task?"
   homePageWelcomeTextUserLoggedIn: "Go to task page in order to create a new task"
   homePageWelcomeTextGuest: "Please sign in in order to create a new task"

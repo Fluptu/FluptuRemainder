@@ -18,6 +18,8 @@ pl:
   task_update_success: "Zaaktualizowano zadanie"
   task_delete_success: "Zadanie pomyślnie usunięte"
   task_delete_confirm: "Na pewno usunąć zadanie?"
+  delete_task_header: "Uwaga"
+  delete_task_message: "Czy na pewno chcesz usunąć zadanie?"
   homePageWelcomeTextUserLoggedIn: "Przejdź do strony zadań aby dodać nowe zadania"
   homePageWelcomeTextGuest: "Zaloguj się aby dodać zadanie"
   sign_up: "Zarejestruj się"

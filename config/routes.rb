@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   scope "(:locale)" do
     devise_for :users, skip: :omniauth_callbacks
     get 'users', to: redirect("users/sign_up")
+    get 'tasks/delete_confirm' => 'tasks#delete_confirm'
     resources :tasks, :user
     get 'homeOS', to: 'pages#homeOS'
     root 'pages#home'
     mount Facebook::Messenger::Server, at: 'bot'
   end
-
 
 end
