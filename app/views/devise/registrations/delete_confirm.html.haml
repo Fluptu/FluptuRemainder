@@ -1,13 +1,14 @@
 = turbo_frame_tag "modal" do
   %div{"data-controller"=>"modal"}
     %h1.modal-header
-      = t '.edit_task_header'
+      = t(:delete_user_header)
 
     %div.modal-body
-      = render "form", task: @task
+      %p=t(:delete_user_message)
 
     %br
 
     .modal-footer.justify-content-between
-      = button_to t('.delete_task_button'), tasks_delete_confirm_path(@task), method: :get, data: { turbo_frame: 'modal' }, class: "btn btn-danger"
+      %p= "#{t(:unhappy)} #{button_to t(:cancel_account_confirm), @user, method: :delete, class: 'btn btn-danger'}"
       %button.btn.btn-secondary{:type=>"button", "data-bs-dismiss"=>"modal" } X
+

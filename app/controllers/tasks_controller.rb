@@ -39,6 +39,7 @@ class TasksController < ApplicationController
     end
   end
 
+  # DELETE_CONFIRM
   def delete_confirm
 
   end
