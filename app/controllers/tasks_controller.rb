@@ -6,7 +6,7 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = current_user.tasks
+    @tasks = current_user.tasks.order(:scheduled_date)
   end
 
   # GET /tasks/1 or /tasks/1.json

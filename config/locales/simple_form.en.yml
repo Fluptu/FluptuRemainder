@@ -57,7 +57,7 @@ en:
   account_cancel: "Cancel my account"
   unhappy: "Unhappy?"
   cancel_account_confirm: "Cancel my account"
-  confirmation: "Are you sure?"
+  confirmation: "Are you sure you want to delete your account along with created tasks?"
   back: "Back"
   confirmation_not_received: "Didn't receive confirmation instructions?"
   unlock_instructions_not_received: "Didn't receive unlock instructions?"
