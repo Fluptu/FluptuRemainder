@@ -11,6 +11,7 @@
 
   %body
 
+    / global modal controller
     .modal{:tabindex=>'-1',
         "data-controller"=>'modal',
         "data-modal-target"=>'modal',
@@ -31,3 +32,14 @@
           = render 'layouts/header'
 
         = yield
+
+    / custom dialogs
+    %dialog#turbo-confirm
+      %form{:method=>'dialog'}
+        .dialog-header.p-2.px-3
+          %h2=t(:dialog_header_text)
+        .dialog-content.m-3
+          %p
+          %div
+            %button.btn.btn-secondary.float-start.m-2{:value=>'cancel'}=t(:cancel_button)
+            %button.btn.btn-danger.float-end.m-2{:value=>'confirm'}=t(:confirm_button)

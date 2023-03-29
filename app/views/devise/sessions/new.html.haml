@@ -1,19 +1,21 @@
 .basic-view.rounded-4.p-3.mb-3
   %h2= t(:login)
 
-  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .form-inputs
-      = f.input :username,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "name" }
-      = f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" }
-      = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+  .row.d-flex.justify-content-center
+    .col-lg-2.offset-lg-0.align-self-center.text-center.py-2
+      = button_to t(:sign_up_facebook), user_facebook_omniauth_authorize_path, method: :post, data: {turbo: false}, class: 'btn btn-secondary'
+    .col-md-8.col-lg-6.col-xl-5.col-xxl-4.p-2
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name), ) do |f|
+        .form-inputs
+          = f.input :username,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "name" }
+          = f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" }
+          = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
 
 
-    .form-actions
-      = f.button :submit, t(:login),class: 'btn btn-secondary'
-
-  = render "devise/shared/links"
+        .form-actions
+          = f.button :submit, t(:login), data: { turbo: false }, class: 'btn btn-secondary float-end'

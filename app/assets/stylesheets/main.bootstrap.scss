@@ -20,6 +20,26 @@ $backColor: #1d0c34;
     background-color: $backColor;
 }
 
+dialog{
+    pointer-events: none;
+    padding: 0 0 1em 0;
+    color: #aaa;
+    border-radius: 10px;
+    border: 2px solid black;
+    opacity: 0;
+    transition: opacity 0.5s;
+    .dialog-header{
+        background-color: $backColor;
+    }
+
+    background-color: $mainColor;
+}
+
+dialog[open]{
+    opacity: 1;
+    pointer-events: inherit;
+}
+
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}

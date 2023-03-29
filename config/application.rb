@@ -11,12 +11,14 @@ module FluptuHome
     # Initialize configuration defaults for originally generated Rails version.
     I18n.available_locales = %i[en pl]
 
+
     config.load_defaults 7.0
     config.assets.precompile += ["main.bootstrap.scss"]
     config.i18n.default_locale = :en
 
     config.paths.add File.join('app', 'bot'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'bot', '*')]
+    config.autoload_paths << Rails.root.join('lib')
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

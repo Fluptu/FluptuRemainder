@@ -1,12 +1,12 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[ show edit update destroy ]
+  before_action :set_task, only: %i[ show edit update destroy delete_confirm ]
   before_action :authenticate_user!
   before_action :ensure_frame_response, only: %i[ new edit]
 
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = current_user.tasks
+    @tasks = current_user.tasks.order(:scheduled_date)
   end
 
   # GET /tasks/1 or /tasks/1.json
@@ -37,6 +37,11 @@ class TasksController < ApplicationController
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  # DELETE_CONFIRM
+  def delete_confirm
+
   end
 
   # PATCH/PUT /tasks/1 or /tasks/1.json

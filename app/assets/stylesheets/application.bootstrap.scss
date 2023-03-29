@@ -136,6 +136,7 @@ header{
     .media-btn{
         display: block;
         position: fixed;
+
         z-index: 1;
     }
     .openbtn{
@@ -146,6 +147,7 @@ header{
         cursor: pointer;
         color: white;
         background-color: #111;
+        margin-top: 3rem;
         border: none;
     }
     .sidebar {

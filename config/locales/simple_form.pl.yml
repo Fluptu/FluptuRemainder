@@ -1,4 +1,4 @@
-en:
+pl:
   simple_form:
     "yes": 'Tak'
     "no": 'Nie'
@@ -29,4 +29,37 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
-
+  resend_confirmation_instructions: "Wyślij ponownie instrukcje"
+  welcome: "Witaj "
+  email_can_be_confirmed_below: "Możesz potwierdzić adres e-mail swojego konta, klikając poniższy link:"
+  hello: "Witaj "
+  notify_being_changed_email: "Kontaktujemy się z Tobą, aby powiadomić Cię o zmianie adresu e-mail na"
+  notify_changed_email: "Kontaktujemy się z Tobą, aby powiadomić Cię, że Twój adres e-mail został zmieniony na"
+  notify_password_changed: "Kontaktujemy się z Tobą, aby powiadomić Cię, że Twoje hasło zostało zmienione."
+  password_change_requested: "Ktoś poprosił o link do zmiany hasła. Możesz to zrobić za pomocą poniższego linku."
+  password_change: "Zmień hasło"
+  password_change_ignore: "Jeśli nie prosiłeś o to, zignoruj tę wiadomość e-mail."
+  password_change_link_required: "Twoje hasło nie ulegnie zmianie, dopóki nie otworzysz powyższego łącza i nie utworzysz nowego."
+  account_locked: "Twoje konto zostało zablokowane z powodu nadmiernej liczby nieudanych prób logowania."
+  account_locked_unlock: "Kliknij poniższy link, aby odblokować swoje konto:"
+  unlock_account: "Odblokuj moje konto"
+  change_password: "Zmień hasło"
+  new_password_label: "Nowe hasło"
+  minimum_password_length: "Minimum %{minimum_length} znaków"
+  password_confirm: "Potwierdź swoje nowe hasło"
+  password_forgotten: "Zapomniałeś hasła?"
+  password_reset_send: "Wyślij mi instrukcje resetowania hasła"
+  edit: "Edycja"
+  update: "Zmień"
+  email_confirmation_waiting: "Obecnie oczekuje na potwierdzenie dla:"
+  password_change_leave_blank: "pozostaw to pole puste, jeśli nie chcesz go zmieniać"
+  password_change_confirm_hint: "potrzebujemy Twojego aktualnego hasła, aby potwierdzić zmiany"
+  account_cancel: "Usuń konto"
+  unhappy: "Coś nie tak?"
+  cancel_account_confirm: "Usuń moje konto"
+  confirmation: "Czy na pewno chcesz usunąć konto razem z stworzonymi zadaniami?"
+  back: "Powrót"
+  confirmation_not_received: "Nie otrzymałeś instrukcji potwierdzających?"
+  unlock_instructions_not_received: "Nie otrzymałeś instrukcji odblokowania?"
+  sign_with: "Zaloguj się przy pomocy"
+  unlock_resend: "Wyślij ponownie instrukcje odblokowania"
