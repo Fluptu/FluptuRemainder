@@ -37,7 +37,7 @@ main {
 }
 
 header{
-    height: 15vh;
+    min-height: 15vh;
     background-color: $backColor;
 }
 
@@ -66,11 +66,11 @@ header{
     }
 }
 
-  
+
 .sidebar {
     position: fixed;
     height: 100vh;
-    width: 7vh;
+    min-width: 0;
     background-color: #111;   
     transition: 0.5s;
     text-align: center;
@@ -130,6 +130,11 @@ header{
 .login-links{
     text-decoration: none;
     color: #fff;
+}
+@media screen and (min-width: 40em){
+    sidebar{
+        min-width: 7vh;
+    }
 }
 
 @media screen and (max-width: 40em) {

@@ -28,6 +28,16 @@
 
         .form-actions
           = f.button :submit, t(:update), data: { turbo: false }, class: 'btn btn-secondary float-end'
+    - if current_user.uid != nil
+      .col-lg-2.offset-lg-0.align-self-center.text-center.py-2
+        %h3 #{current_user.provider} credentials
+        %p
+          = current_user.username
+          = current_user.name
+          %img{:src=> "#{current_user.image}" }
+
+
+
 
   %br
   %h3= t(:account_cancel)
