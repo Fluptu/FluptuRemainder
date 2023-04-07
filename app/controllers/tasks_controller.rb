@@ -1,16 +1,21 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[ show edit update destroy delete_confirm ]
+  before_action :set_task, only: %i[ edit update destroy ]
   before_action :authenticate_user!
   before_action :ensure_frame_response, only: %i[ new edit]
 
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = current_user.tasks.order(:scheduled_date)
-  end
-
-  # GET /tasks/1 or /tasks/1.json
-  def show
+    @tasks = current_user.tasks.all.order(:scheduled_date) if @tasks.blank?
+    if params[:completed].present?
+      if params[:completed] == t(:filter_completed)
+        @tasks = current_user.tasks.is_completed(true).order(:scheduled_date)
+      elsif params[:completed] == t(:filter_not_completed)
+        @tasks = current_user.tasks.is_completed(false).order(:scheduled_date)
+      else
+        @tasks = current_user.tasks.all.order(:scheduled_date)
+      end
+    end
   end
 
   # GET /tasks/new
@@ -37,11 +42,6 @@ class TasksController < ApplicationController
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  # DELETE_CONFIRM
-  def delete_confirm
-
   end
 
   # PATCH/PUT /tasks/1 or /tasks/1.json

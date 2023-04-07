@@ -6,6 +6,8 @@
 
 * { box-sizing: border-box; }
 
+/* ======= Scrollbar ============ */
+
 ::-webkit-scrollbar{
     width: 0.5rem;
 }
@@ -19,21 +21,17 @@
     background: #363636;
 }
 
+/*  ================================= */
+
 body {
     min-height: 100vh;
-    min-height: -webkit-fill-available;
     font-family: "Lato", sans-serif;
     background-color: $mainColor;
 }
-  
-html {
-    height: -webkit-fill-available;
-    //overflow: hidden;
-}
+
   
 main {
     height: 100vh;
-    height: -webkit-fill-available;
 }
 
 header{
@@ -66,11 +64,12 @@ header{
     }
 }
 
+/* ========== Sidebar ============= */
 
 .sidebar {
     position: fixed;
     height: 100vh;
-    min-width: 0;
+    width: 7vh;
     background-color: #111;   
     transition: 0.5s;
     text-align: center;
@@ -85,6 +84,11 @@ header{
 
 .sidebar a:hover {
     color: #f1f1f1;
+}
+
+.active{
+    border: none;
+    color: #f1f1f1 !important;
 }
 
 #homePageText,#homeOSPageText,#tasksPageText{
@@ -107,7 +111,10 @@ header{
     display: none;
 }
 
+/* ================================= */
 
+
+/*  ========= Modals ===========  */
 
 .modal-header,.modal-footer {
     color: #fff;
@@ -126,17 +133,26 @@ header{
     border:2px solid black;
 }
 
+/* ======================== */
+
 .login-links{
     text-decoration: none;
     color: #fff;
 }
-@media screen and (min-width: 40em){
+
+.filter-buttons{
+    padding: 0.5rem;
+    background-color: gainsboro;
+    margin: 0;
+}
+
+/*@media screen and (min-width: 40em){
     sidebar{
         min-width: 7vh;
     }
-}
+}*/
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 700px) {
     .media-btn{
         display: block;
         position: fixed;

@@ -22,6 +22,10 @@ en:
   sign_up: "Sign up"
   login: "Sign in"
   sign_out: "Logout"
+  filter_hint_text: "Filter by: "
+  filter_all: "All"
+  filter_completed: "Finished"
+  filter_not_completed: "Not finished"
   tasks:
     new:
       new_task_header: "New Task"
