@@ -27,6 +27,10 @@ pl:
   sign_up_facebook: "Zaloguj się przy pomocy Facebooka"
   login: "Zaloguj"
   sign_out: "Wyloguj się"
+  filter_hint_text: "Filtruj według: "
+  filter_all: "Wszystkie"
+  filter_completed: "Ukończone"
+  filter_not_completed: "Nieukończone"
   tasks:
     new:
       new_task_header: "Nowe zadanie"
@@ -37,6 +41,7 @@ pl:
       task_header_text: "Zadania"
       task_header_new_task_text: "Nowe zadanie"
       show_task_button_text: "Pokaż szczegóły"
+
     task:
       is_task_scheduled: "Do wykonania:"
       is_task_completed: "Wykonano:"

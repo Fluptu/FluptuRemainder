@@ -2,18 +2,18 @@
 
     %button.openbtn{"data-action"=>"side-menu#sideMenuToggle"}☰
 
-    = link_to root_path, class: "btn btn-default pt-3" do
+    = link_to root_path, class: "#{current_class?(root_path)} btn btn-default pt-3" do
         %i.bi.bi-house-fill
         %span#homePageText
             = t(:homePageText)
 
     / hidden for now
-    = link_to homeOS_path, class: "btn btn-default d-none" do
+    = link_to homeOS_path, class: "#{current_class?(homeOS_path)} btn btn-default d-none" do
         %i.bi.bi-house-gear-fill
         %span#homeOSPageText
             = t(:homeOSPageText)
 
-    = link_to tasks_path, class: "btn btn-default #{current_user ? '' : 'd-none' } " do
+    = link_to tasks_path, class: "#{current_class?(tasks_path)} btn btn-default #{current_user ? '' : 'd-none' } " do
         %i.bi.bi-calendar-check
         %span#tasksPageText
             = t(:tasksPageText)

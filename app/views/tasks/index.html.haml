@@ -3,17 +3,32 @@
   crossorigin: "anonymous",
   async: true}
 
+
+
+
+
 .tasks-view.rounded-4.p-3.mb-3
-  .d-flex.flex-row.p-1.text-center.justify-content-between.mb-2
+  .d-flex.p-1.mb-2
     %h1= t(:'.task_header_text')
-    = button_to t(:'.task_header_new_task_text'), new_task_path, method: :get, data: { turbo_frame: 'modal' }, class: "btn btn-primary"
+    .d-flex.px-3
+      =form_with(url: tasks_path, class: 'filter-container', method: :get,
+           data: { controller: "filters", filters_target: "form", turbo_frame: "filter_result"}) do |f|
+        .d-flex.flex-row
+          = f.label :completed, t(:filter_hint_text),class: 'col-sm-4 mx-2 align-self-center'
+          = f.select :completed,
+            options_for_select([t(:filter_all),t(:filter_completed),t(:filter_not_completed)], params[:completed]),
+            { include_blank: false },
+            { data: { action: "filters#submit" },class: 'form-select col-2 col-sm-1' }
+    .ms-auto
+      = button_to t(:'.task_header_new_task_text'), new_task_path, method: :get, data: { turbo_frame: 'modal' }, class: "btn btn-primary"
 
 
-  .row{"data-masonry"=>'{"percentPosition": true }', :style=>"height: 80vh"}
-    - @tasks.each do |task|
-      .col-sm-6.col-lg-4.mb-4
-        .card.text-bg-dark.mb-3
-          .card-body.d-flex.flex-column
-            = render task
-            %div
-              = button_to t(:'.show_task_button_text'), edit_task_path(task), method: :get, data: { turbo_frame: 'modal' }, class: "btn btn-secondary btn-sm mt-2"
+  = turbo_frame_tag "filter_result" do
+    .row{"data-masonry"=>'{"percentPosition": true }'}
+      - @tasks.each do |task|
+        .col-sm-6.col-lg-4.mb-4
+          .card.text-bg-dark.mb-3
+            .card-body.d-flex.flex-column
+              = render task
+              %div
+                = button_to t(:'.show_task_button_text'), edit_task_path(task), method: :get, data: { turbo_frame: 'modal' }, class: "btn btn-secondary btn-sm mt-2"
